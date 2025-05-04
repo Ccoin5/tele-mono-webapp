@@ -22,7 +22,8 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen bg-telegram-bg dark:bg-gray-900">
       <div className="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-sm p-2">
-        <div className="container mx-auto flex justify-end">
+        <div className="container mx-auto flex justify-between items-center">
+          <h2 className="font-medium text-telegram-primary dark:text-telegram-light">Monoptica</h2>
           <DarkModeToggle />
         </div>
       </div>

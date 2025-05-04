@@ -1,6 +1,9 @@
+
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Instagram, Telegram } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -10,41 +13,6 @@ import {
 } from "@/components/ui/carousel";
 
 const Index = () => {
-  const [messages] = useState([
-    {
-      id: 1,
-      name: "Monoptica Support",
-      message: "Welcome to Telegram! How can we help you today?",
-      time: "09:30",
-      avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=50&h=50&auto=format&fit=crop",
-      unread: 2,
-    },
-    {
-      id: 2,
-      name: "Design Team",
-      message: "The new designs are ready for review. Please check when you have time.",
-      time: "Yesterday",
-      avatar: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=50&h=50&auto=format&fit=crop",
-      unread: 0,
-    },
-    {
-      id: 3,
-      name: "Development Group",
-      message: "Sprint planning meeting scheduled for tomorrow at 10 AM.",
-      time: "Yesterday",
-      avatar: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=50&h=50&auto=format&fit=crop",
-      unread: 5,
-    },
-    {
-      id: 4,
-      name: "Marketing Team",
-      message: "Latest campaign numbers are looking good!",
-      time: "Tuesday",
-      avatar: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=50&h=50&auto=format&fit=crop",
-      unread: 0,
-    },
-  ]);
-
   const slides = [
     {
       id: 1,
@@ -115,32 +83,47 @@ const Index = () => {
         </Card>
       </section>
 
-      <h2 className="text-xl font-semibold mb-4 text-telegram-primary dark:text-telegram-light">Recent Messages</h2>
-      <div className="space-y-2">
-        {messages.map((chat) => (
-          <Card key={chat.id} className="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 dark:border-gray-700">
-            <div className="flex items-center space-x-4">
-              <Avatar className="h-12 w-12 border-2 border-telegram-primary dark:border-telegram-light">
-                <img src={chat.avatar} alt={chat.name} />
-              </Avatar>
-              <div className="flex-1 min-w-0">
-                <div className="flex justify-between">
-                  <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
-                    {chat.name}
-                  </p>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">{chat.time}</span>
-                </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{chat.message}</p>
-              </div>
-              {chat.unread > 0 && (
-                <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-medium text-white bg-telegram-primary rounded-full">
-                  {chat.unread}
-                </span>
-              )}
+      {/* Telegram Bot Help Section */}
+      <section className="mb-8">
+        <Card className="p-6 dark:bg-gray-800 dark:border-gray-700">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-4 md:mb-0">
+              <h2 className="text-xl font-semibold mb-2 text-telegram-primary dark:text-telegram-light">Need Help? Chat with Our Bot</h2>
+              <p className="text-gray-700 dark:text-gray-300">
+                Get instant assistance and information through our Telegram bot.
+              </p>
             </div>
-          </Card>
-        ))}
-      </div>
+            <a href="https://t.me/monoptica_bot" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-telegram-primary hover:bg-telegram-dark text-white">
+                <Telegram className="mr-2" />
+                Open Telegram Bot
+              </Button>
+            </a>
+          </div>
+        </Card>
+      </section>
+
+      {/* Glasses Manufacturing and Repair Section */}
+      <section className="mb-8">
+        <Card className="p-6 dark:bg-gray-800 dark:border-gray-700">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-4 md:mb-0">
+              <h2 className="text-xl font-semibold mb-2 text-telegram-primary dark:text-telegram-light">
+                Виготовлення, ремонт окулярів будь-якої складності
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300">
+                Професійні послуги з виготовлення та ремонту окулярів. Індивідуальний підхід до кожного клієнта.
+              </p>
+            </div>
+            <a href="https://www.instagram.com/monoptica.of/" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+                <Instagram className="mr-2" />
+                Instagram
+              </Button>
+            </a>
+          </div>
+        </Card>
+      </section>
     </div>
   );
 };
