@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
@@ -74,32 +73,30 @@ const Index = () => {
         <p className="text-gray-500 dark:text-gray-400 text-sm">Your vision, our priority</p>
       </header>
 
-      {/* Slider Section */}
+      {/* Slider Section - Updated to be full width */}
       <section className="mb-8">
-        <Carousel className="mx-auto max-w-md">
+        <Carousel className="w-full">
           <CarouselContent>
             {slides.map((slide) => (
               <CarouselItem key={slide.id}>
-                <div className="p-1">
-                  <Card className="overflow-hidden dark:bg-gray-800 dark:border-gray-700">
-                    <div className="relative h-48 w-full">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="h-full w-full object-cover"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
-                        <h3 className="font-semibold">{slide.title}</h3>
-                        <p className="text-sm">{slide.description}</p>
-                      </div>
+                <Card className="overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+                  <div className="relative h-64 w-full">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
+                      <h3 className="font-semibold">{slide.title}</h3>
+                      <p className="text-sm">{slide.description}</p>
                     </div>
-                  </Card>
-                </div>
+                  </div>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-0" />
-          <CarouselNext className="right-0" />
+          <CarouselPrevious className="left-2" />
+          <CarouselNext className="right-2" />
         </Carousel>
       </section>
 

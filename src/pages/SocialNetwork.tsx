@@ -1,13 +1,11 @@
-
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
-import { toast } from "@/components/ui/sonner";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 
 const SocialNetwork = () => {
+  // Keep only Twitter and Facebook posts
   const socialPosts = [
     {
       id: 1,
@@ -20,18 +18,6 @@ const SocialNetwork = () => {
       shares: 12,
       time: "2h ago",
       platform: "twitter",
-    },
-    {
-      id: 2,
-      user: "Monoptica Team",
-      handle: "@monoptica_official",
-      avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=50&h=50&auto=format&fit=crop",
-      content: "Our design team has been working on new features for our messaging platform. Stay tuned for updates!",
-      image: "",
-      likes: 124,
-      shares: 38,
-      time: "Yesterday",
-      platform: "instagram",
     },
     {
       id: 3,
@@ -47,111 +33,64 @@ const SocialNetwork = () => {
     }
   ];
 
-  // Instagram posts
+  // Instagram posts from monoptica.of
   const [instagramPosts, setInstagramPosts] = useState([
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=400&auto=format&fit=crop",
-      caption: "Our new premium lenses collection has arrived! #monoptica #eyewear",
+      image: "https://scontent.cdninstagram.com/v/t51.29350-15/353792562_957014458981551_374211972116392670_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9e7101&_nc_ohc=xOjneyGursMAX-S46xl&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfD2VGHfPZxnc2Axd-qoVDuGgZWxrXVzShMfVRTxpPpApA&oe=666587FD",
+      caption: "New premium collection from Monoptica #monoptica #eyewear",
       likes: 127,
       comments: 23,
-      time: "2 days ago"
+      time: "May 3, 2025"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1546914782-96b445f7d7c1?q=80&w=400&auto=format&fit=crop",
+      image: "https://scontent.cdninstagram.com/v/t51.29350-15/285805275_730763491435527_730159340754140146_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9e7101&_nc_ohc=0BmnsQZitAUAX8Zw67C&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBY8k_dYIJ6PmqjiQXkk2dVgvfsUvRwP3tUeH1eMIJqpQ&oe=666581D3",
       caption: "Modern frames for every style. Visit our store today! #fashion #glasses",
       likes: 89,
       comments: 14,
-      time: "4 days ago"
+      time: "May 1, 2025"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?q=80&w=400&auto=format&fit=crop",
+      image: "https://scontent.cdninstagram.com/v/t51.29350-15/277700565_1217787838993529_6846673110036391390_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9e7101&_nc_ohc=h6BY7dCLSxUAX9vsLPu&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfB17rUHXC9_jtiOVqjpqfEyiiy4_UmaFQW94BiStOXAog&oe=6665FE83",
       caption: "Expert eye care services by our certified specialists #eyecare #health",
       likes: 213,
       comments: 31,
-      time: "1 week ago"
+      time: "April 29, 2025"
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1577803645773-f96470509666?q=80&w=400&auto=format&fit=crop",
+      image: "https://scontent.cdninstagram.com/v/t51.29350-15/277361078_146965417748481_7885619462322638838_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9e7101&_nc_ohc=Ag5XVPSWLSUAX_6brsJ&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfB_FfjkhWyAGIK7H4DyvbpUnHP1HdvVg8ZTxJXvfOMPxQ&oe=6666297B",
       caption: "New styles just arrived! Check out our latest collection #newcollection #eyewear",
       likes: 156,
       comments: 18,
-      time: "1 week ago"
+      time: "April 25, 2025"
     }
   ]);
 
-  // Dark mode
-  const [darkMode, setDarkMode] = useState(false);
-  
-  useEffect(() => {
-    // Check if user prefers dark mode
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
-    
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-  
-  const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem("darkMode", newDarkMode.toString());
-    
-    if (newDarkMode) {
-      document.documentElement.classList.add("dark");
-      toast("Dark mode enabled", {
-        description: "Your preferences have been saved",
-      });
-    } else {
-      document.documentElement.classList.remove("dark");
-      toast("Light mode enabled", {
-        description: "Your preferences have been saved",
-      });
-    }
-  };
-
   const platformIcons = {
     twitter: <Twitter className="w-5 h-5 text-blue-400" />,
-    instagram: <Instagram className="w-5 h-5 text-pink-500" />,
-    facebook: <Facebook className="w-5 h-5 text-blue-600" />,
-    linkedin: <Linkedin className="w-5 h-5 text-blue-700" />
+    facebook: <Facebook className="w-5 h-5 text-blue-600" />
   };
 
   return (
     <div className="container mx-auto px-4 py-6">
       <header className="mb-6 flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-telegram-primary">Social Network</h1>
+          <h1 className="text-2xl font-bold text-telegram-primary dark:text-telegram-light">Social Network</h1>
           <p className="text-gray-500 dark:text-gray-400 text-sm">Latest updates from our channels</p>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-500 dark:text-gray-400">Dark Mode</span>
-          <Switch checked={darkMode} onCheckedChange={toggleDarkMode} />
         </div>
       </header>
 
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 gap-4 mb-6">
         <a href="#" className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
           <Twitter className="h-6 w-6 text-blue-400 mb-2" />
           <span className="text-xs dark:text-gray-300">Twitter</span>
         </a>
         <a href="#" className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
-          <Instagram className="h-6 w-6 text-pink-500 mb-2" />
-          <span className="text-xs dark:text-gray-300">Instagram</span>
-        </a>
-        <a href="#" className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
           <Facebook className="h-6 w-6 text-blue-600 mb-2" />
           <span className="text-xs dark:text-gray-300">Facebook</span>
-        </a>
-        <a href="#" className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
-          <Linkedin className="h-6 w-6 text-blue-700 mb-2" />
-          <span className="text-xs dark:text-gray-300">LinkedIn</span>
         </a>
       </div>
 
@@ -161,7 +100,7 @@ const SocialNetwork = () => {
           <h2 className="text-xl font-semibold mb-4 text-telegram-primary dark:text-telegram-light">
             <span className="flex items-center gap-2">
               <Instagram className="h-5 w-5 text-pink-500" />
-              Latest Instagram Posts
+              Latest Instagram Posts from @monoptica.of
             </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
