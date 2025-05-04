@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Phone, User } from "lucide-react";
+import { Mail, Phone, User, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
