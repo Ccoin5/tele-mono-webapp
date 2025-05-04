@@ -70,8 +70,8 @@ const Index = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <header className="mb-6">
-        <h1 className="text-2xl font-bold text-telegram-primary">Monoptica</h1>
-        <p className="text-gray-500 text-sm">Your vision, our priority</p>
+        <h1 className="text-2xl font-bold text-telegram-primary dark:text-telegram-light">Monoptica</h1>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">Your vision, our priority</p>
       </header>
 
       {/* Slider Section */}
@@ -81,7 +81,7 @@ const Index = () => {
             {slides.map((slide) => (
               <CarouselItem key={slide.id}>
                 <div className="p-1">
-                  <Card className="overflow-hidden">
+                  <Card className="overflow-hidden dark:bg-gray-800 dark:border-gray-700">
                     <div className="relative h-48 w-full">
                       <img
                         src={slide.image}
@@ -105,35 +105,35 @@ const Index = () => {
 
       {/* Info Section */}
       <section className="mb-8">
-        <Card className="p-6">
-          <h2 className="text-xl font-semibold mb-4 text-telegram-primary">About Monoptica</h2>
-          <p className="text-gray-700 mb-4">
+        <Card className="p-6 dark:bg-gray-800 dark:border-gray-700">
+          <h2 className="text-xl font-semibold mb-4 text-telegram-primary dark:text-telegram-light">About Monoptica</h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Monoptica is your premier destination for quality eyewear and professional eye care services. 
             With over 20 years of experience, we offer the latest in optical technology and fashion.
           </p>
-          <p className="text-gray-700">
+          <p className="text-gray-700 dark:text-gray-300">
             Our team of certified specialists is dedicated to providing personalized care and 
             the perfect vision solutions tailored to your needs.
           </p>
         </Card>
       </section>
 
-      <h2 className="text-xl font-semibold mb-4 text-telegram-primary">Recent Messages</h2>
+      <h2 className="text-xl font-semibold mb-4 text-telegram-primary dark:text-telegram-light">Recent Messages</h2>
       <div className="space-y-2">
         {messages.map((chat) => (
-          <Card key={chat.id} className="p-4 cursor-pointer hover:bg-gray-50">
+          <Card key={chat.id} className="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 dark:border-gray-700">
             <div className="flex items-center space-x-4">
-              <Avatar className="h-12 w-12 border-2 border-telegram-primary">
+              <Avatar className="h-12 w-12 border-2 border-telegram-primary dark:border-telegram-light">
                 <img src={chat.avatar} alt={chat.name} />
               </Avatar>
               <div className="flex-1 min-w-0">
                 <div className="flex justify-between">
-                  <p className="text-sm font-medium text-gray-900 truncate">
+                  <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
                     {chat.name}
                   </p>
-                  <span className="text-xs text-gray-500">{chat.time}</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{chat.time}</span>
                 </div>
-                <p className="text-sm text-gray-500 truncate">{chat.message}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{chat.message}</p>
               </div>
               {chat.unread > 0 && (
                 <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-medium text-white bg-telegram-primary rounded-full">
