@@ -25,7 +25,7 @@ const BottomNavigation = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 shadow-lg">
+    <nav className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-lg">
       <div className="grid h-full max-w-lg grid-cols-3 mx-auto">
         {navItems.map((item) => (
           <Link
@@ -33,8 +33,8 @@ const BottomNavigation = () => {
             to={item.path}
             className={`flex flex-col items-center justify-center ${
               path === item.path 
-                ? "text-telegram-primary" 
-                : "text-gray-500 hover:text-telegram-primary"
+                ? "text-telegram-primary dark:text-telegram-light" 
+                : "text-gray-500 dark:text-gray-400 hover:text-telegram-primary dark:hover:text-telegram-light"
             }`}
           >
             <div className="flex items-center justify-center">
