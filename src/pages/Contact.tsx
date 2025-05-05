@@ -1,15 +1,13 @@
-
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-
 const Contact = () => {
-  return (
-    <div className="container mx-auto px-4 py-6">
+  return <div className="container mx-auto px-4 py-6">
       <header className="mb-6">
-        <h1 className="text-2xl font-bold text-telegram-primary dark:text-telegram-light">Contact Us</h1>
-        <p className="text-gray-500 dark:text-gray-400 text-sm">Get in touch with our team</p>
+        <h1 className="text-2xl font-bold text-telegram-primary dark:text-telegram-light">АДРЕСИ МЕРЕЖІ ОПТИК</h1>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">
+      </p>
       </header>
 
       <Card className="p-6 dark:bg-gray-800 dark:border-gray-700">
@@ -17,8 +15,7 @@ const Contact = () => {
           {/* Accordion 1: Contact Information */}
           <AccordionItem value="contact-info">
             <AccordionTrigger className="text-lg font-semibold text-telegram-primary dark:text-telegram-light">
-              Contact Information
-            </AccordionTrigger>
+Дніпро, ТЦ «Новий центр» 1 поверх вул. В’ячеслава Липинського, 7б</AccordionTrigger>
             <AccordionContent>
               <div className="space-y-4 pt-2">
                 <div className="flex items-center space-x-3">
@@ -47,9 +44,7 @@ const Contact = () => {
 
           {/* Accordion 2: Location */}
           <AccordionItem value="location">
-            <AccordionTrigger className="text-lg font-semibold text-telegram-primary dark:text-telegram-light">
-              Location
-            </AccordionTrigger>
+            <AccordionTrigger className="text-lg font-semibold text-telegram-primary dark:text-telegram-light">Дніпро, вул. Набережна Заводська, 97А</AccordionTrigger>
             <AccordionContent>
               <div className="space-y-4 pt-2">
                 <div className="flex items-start space-x-3">
@@ -129,8 +124,6 @@ const Contact = () => {
           </AccordionItem>
         </Accordion>
       </Card>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
