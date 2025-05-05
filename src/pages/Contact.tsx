@@ -22,13 +22,6 @@ const Contact = () => {
             <AccordionContent>
               <div className="space-y-4 pt-2">
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-telegram-primary dark:text-telegram-light" />
-                  <div>
-                    <p className="font-medium dark:text-white">Email</p>
-                    <span className="dark:text-gray-300">contact@monoptica.com</span>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-telegram-primary dark:text-telegram-light" />
                   <div>
                     <p className="font-medium dark:text-white">Phone</p>
@@ -58,13 +51,21 @@ const Contact = () => {
               Location
             </AccordionTrigger>
             <AccordionContent>
-              <div className="flex items-start space-x-3 pt-2">
-                <MapPin className="w-5 h-5 text-telegram-primary dark:text-telegram-light" />
-                <div>
-                  <p className="font-medium dark:text-white">Address</p>
-                  <p className="dark:text-gray-300">123 Vision Street</p>
-                  <p className="dark:text-gray-300">Optical City, OC 12345</p>
-                  <p className="dark:text-gray-300">United States</p>
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-telegram-primary dark:text-telegram-light" />
+                  <div>
+                    <p className="font-medium dark:text-white">Address</p>
+                    <p className="dark:text-gray-300">123 Vision Street</p>
+                    <p className="dark:text-gray-300">Optical City, OC 12345</p>
+                    <p className="dark:text-gray-300">United States</p>
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <Button className="bg-[#7360F2] hover:bg-[#5B4CD6] text-white">
+                    <Phone className="mr-2 h-4 w-4" />
+                    Contact on Viber
+                  </Button>
                 </div>
               </div>
             </AccordionContent>
@@ -76,13 +77,21 @@ const Contact = () => {
               Business Hours
             </AccordionTrigger>
             <AccordionContent>
-              <div className="flex items-start space-x-3 pt-2">
-                <Clock className="w-5 h-5 text-telegram-primary dark:text-telegram-light" />
-                <div>
-                  <p className="font-medium dark:text-white">Opening Hours</p>
-                  <p className="dark:text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p className="dark:text-gray-300">Saturday: 10:00 AM - 4:00 PM</p>
-                  <p className="dark:text-gray-300">Sunday: Closed</p>
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start space-x-3">
+                  <Clock className="w-5 h-5 text-telegram-primary dark:text-telegram-light" />
+                  <div>
+                    <p className="font-medium dark:text-white">Opening Hours</p>
+                    <p className="dark:text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p className="dark:text-gray-300">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p className="dark:text-gray-300">Sunday: Closed</p>
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <Button className="bg-[#7360F2] hover:bg-[#5B4CD6] text-white">
+                    <Phone className="mr-2 h-4 w-4" />
+                    Contact on Viber
+                  </Button>
                 </div>
               </div>
             </AccordionContent>
@@ -94,17 +103,27 @@ const Contact = () => {
               Customer Service
             </AccordionTrigger>
             <AccordionContent>
-              <div className="pt-2">
-                <p className="mb-2 dark:text-gray-300">Our dedicated customer service team is ready to assist you with:</p>
-                <ul className="list-disc pl-5 space-y-1 dark:text-gray-300">
-                  <li>Product inquiries</li>
-                  <li>Order status updates</li>
-                  <li>Prescription assistance</li>
-                  <li>Frame adjustments and repairs</li>
-                </ul>
-                <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-                  For emergency eye care issues, please call our 24/7 hotline: +1 (555) 987-6543
-                </p>
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start space-x-3">
+                  <Phone className="w-5 h-5 text-telegram-primary dark:text-telegram-light" />
+                  <div>
+                    <p className="font-medium dark:text-white">Customer Support</p>
+                    <p className="dark:text-gray-300">For emergency eye care issues, please call our 24/7 hotline:</p>
+                    <p className="dark:text-gray-300">+1 (555) 987-6543</p>
+                    <ul className="list-disc pl-5 space-y-1 dark:text-gray-300 mt-2">
+                      <li>Product inquiries</li>
+                      <li>Order status updates</li>
+                      <li>Prescription assistance</li>
+                      <li>Frame adjustments and repairs</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <Button className="bg-[#7360F2] hover:bg-[#5B4CD6] text-white">
+                    <Phone className="mr-2 h-4 w-4" />
+                    Contact on Viber
+                  </Button>
+                </div>
               </div>
             </AccordionContent>
           </AccordionItem>
