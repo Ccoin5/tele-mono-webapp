@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Instagram, Telegram } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -95,7 +95,7 @@ const Index = () => {
             </div>
             <a href="https://t.me/monoptica_bot" target="_blank" rel="noopener noreferrer">
               <Button className="bg-telegram-primary hover:bg-telegram-dark text-white">
-                <Telegram className="mr-2" />
+                <MessageCircle className="mr-2" />
                 Open Telegram Bot
               </Button>
             </a>
