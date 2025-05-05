@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import SocialNetwork from "./pages/SocialNetwork";
+import New from "./pages/New";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Layout><Index /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
           <Route path="/social" element={<Layout><SocialNetwork /></Layout>} />
+          <Route path="/new" element={<Layout><New /></Layout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

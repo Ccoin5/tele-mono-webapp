@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { Home, MessageCircle, Share2 } from "lucide-react";
+import { Home, MessageCircle, Share2, Plus } from "lucide-react";
 
 const BottomNavigation = () => {
   const location = useLocation();
@@ -11,6 +11,11 @@ const BottomNavigation = () => {
       name: "Home",
       path: "/",
       icon: <Home size={24} />,
+    },
+    {
+      name: "New",
+      path: "/new",
+      icon: <Plus size={24} />,
     },
     {
       name: "Contact",
@@ -26,7 +31,7 @@ const BottomNavigation = () => {
 
   return (
     <nav className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-lg">
-      <div className="grid h-full max-w-lg grid-cols-3 mx-auto">
+      <div className="grid h-full max-w-lg grid-cols-4 mx-auto">
         {navItems.map((item) => (
           <Link
             key={item.name}
